@@ -1,0 +1,18 @@
+/* CSS */
+
+.buttonAll {
+  background-color: #4CAF50;  /* Green */
+  border: none;
+  color: white;
+  padding: 5px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #FFFF00; color: black;} /* Yellow */ 

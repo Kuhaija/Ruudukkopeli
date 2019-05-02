@@ -1,0 +1,230 @@
+body {
+    background-color: #FFB861;
+}
+header{
+    background-color: #56bcd4;
+    height: auto;
+    padding: 25px 20px;
+}
+header a:hover{
+    text-decoration: none;
+}
+header h1{
+    font-size: 3vw;
+}
+#ohje p:hover{
+    text-decoration: underline;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 700;
+    color: white;
+}
+.menubutton {
+    float: right;
+    margin: 5px 0;
+}
+
+.appicon {
+    transition: transform 0.5s ease;
+}
+
+.appicon:hover {
+    transform: scale(1.1);
+}
+
+/* PELIHAHMON PIIRTÄMINEN */
+.pelihahmo {
+    position:relative !important;
+    width: 100%;
+    height: 100%;
+}
+
+.canvas {
+    background-color: #FB8604;
+    padding: 30px;
+}
+
+canvas, .toolset {
+    display: block;
+    background: #fff;
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 50%;
+    margin: 50px auto 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+
+.tools {
+    display: block;
+    width: 50px;
+    max-width: 100%;
+    height: auto;
+    margin: 50px auto 50px auto;
+    transition: all 0.2s ease;
+}
+
+.tools:hover {
+    transform: scale(1.2);
+}
+
+#brushDot {
+    display: block;
+    width: 12px;
+    max-width: 100%;
+    height: auto;
+    margin: 50px auto 0px auto;
+    transition: all 0.2s ease;
+}
+
+.currentTool {
+    border-left: 2px dotted black;
+    border-bottom: 2px dotted black;
+    border-radius: 50%;
+    transform: scale(1.2);
+}
+
+.applications {
+    background-color: #EEAA7B;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.apptitle {
+    font-weight: 700;
+    text-align: center;
+    color: #000;
+    margin-top: 25px;
+}
+.appicon-container {
+    min-width: 150px;
+    min-height: 150px;
+}
+.appicon {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 0px auto 25px auto;
+}
+
+hr {
+	border-top: 1px dashed #333;
+}
+
+footer{
+    background-color: #FFB861;
+    padding: 12px;
+    height: 50px;
+    max-height: 50px;
+    text-align: center;
+}
+
+#pelihahmonKuva {
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modalPelihahmo {
+    margin-right: 20px;
+}
+
+/* VALIKON CSS */
+#main {
+  transition: 0s;
+}
+#menu {
+  visibility: hidden;
+  height: 0px;
+}
+/* VALIKON CSS */
+
+/*kyselyn css alku*/
+.ylareuna{
+    margin-top:20px;
+}
+#saannot{
+    border:2px solid #56bcd4;
+    text-align:center;
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+    height: auto;
+    max-width:40px;
+}
+#tehtavaNumero{
+    background-color: snow;
+    color: black;
+    border:2px solid #56bcd4;
+    text-align:center;
+    margin-top:10px;
+    height: auto;
+    max-width: 98px;
+    padding: 0px;
+    border-radius:5px;
+}
+#nro{
+     vertical-align: middle;
+}
+#kysymys{
+    border:2px solid black;
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:5px;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    line-height: 1.5;
+}
+.container-fluid{
+    background-color: #FB8604;
+}#row{
+    margin-left: auto;
+    margin-right: auto;
+}
+.Vastaus{
+    display: inline-block;
+    width: 335px;
+    background-color:snow;
+    margin-left:auto;
+    margin-right:auto;
+    border:2px solid lightblue;
+    margin-top:10px;
+    color: #0000FF;    
+    white-space:normal !important;
+    word-wrap: break-word; 
+}
+.Vastaus:hover, .Vastaus:disabled {
+    color: #0000FF;
+}
+.pohja{
+    margin-bottom:10rem;
+}
+/*kyselyn css loppu*/
+@media only screen and (min-width: 768px) {
+    .oikealle{
+    text-align:right;
+}
+    .vasemmalle{
+    text-align: left;
+}
+    #saannot{
+        margin-right:37%;
+    }
+    #tehtavanumero{
+        margin-left:37%;
+    }
+    #kysymys{
+        max-width:700px;
+    }
+}
+@media only screen and (min-width: 895px) {
+}
+@media only screen and (max-width: 768px) {
+    #kysymys{
+        max-width:335px;
+    }
+}

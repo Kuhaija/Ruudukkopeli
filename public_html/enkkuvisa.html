@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>A-team: Oppimisympäristö</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/tyylit.css" type="text/css"/>
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <header class="row">
+                <div class="col-10 align-self-center">
+                    <a href="https://aaiimi-n8alja.c9users.io/public_html/index.html" id="alku">
+                        <img id='ateamheader' class="img-fluid" src='img/aheader.png' alt='a team logo' width="573px" height="auto">
+                    </a>
+                </div>
+                <div class="col-2 align-self-center">
+                    <img class="menubutton" src="img/menu.png" width="40px" height="40px" onClick="getMenu()">
+                </div>
+            </header>
+            <div id="menu" style="visibility: hidden;"></div>
+            <div id="ohje" class="row">
+                <div class="col-12 text-center pt-3">
+                    <p id="info"><button type="button" class="btn btn-danger"  onClick="getOhje()">Tarvitsetko apua?</button></p>
+                </div>
+            </div>
+
+            <div class="row ylareuna justify-content-center">
+
+                <div id="tehtavaNumero" class="col-2 m-0 p-0">
+                    <button id="nro" class="btn btn-light btn-block text-center disabled">1/10</button>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div id="kysymys" class="col-12"></div>
+            </div>
+
+            <div class="row text-center pohja align-items-center">
+                <div class="col-12 col-md-6 col-lg-6 oikealle"><button id="ekaVastaus" type="button" class="btn btn-outline-primary Vastaus" onclick="ekaVastaus()">&nbsp;</button></div>
+                <div class="col-12 col-md-6 col-lg-6 vasemmalle"><button id="tokaVastaus" type="button" class="btn btn-outline-primary Vastaus" onclick="tokaVastaus()">&nbsp;</button></div>
+                <div class="col-12 col-md-6 col-lg-6 oikealle"><button id="kolmasVastaus" type="button" class="btn btn-outline-primary Vastaus" onclick="kolmasVastaus()">&nbsp;</button></div>
+                <div class="col-12 col-md-6 col-lg-6 vasemmalle"><button id="neljasVastaus" type="button" class="btn btn-outline-primary Vastaus" onClick="neljasVastaus()">&nbsp;</button></div>
+            </div>
+
+            <div class="modal fade" id="voittoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header align-items-center">
+                            <img id="pelihahmonKuva" class="modalPelihahmo" src="" width="50px" height="50px" />
+                            <h5 class="modal-title text-dark" id="exampleModalLabel">Peli läpäisty</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="voittoModalTeksti"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulje</button>
+                            <button type="button" class="btn btn-primary" onClick="init()">Aloita alusta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KIRJOITA PELISI OHJE TÄHÄN MODALIIN -->
+
+            <div class="modal fade" id="ohjeModal" tabindex="-1" role="dialog" aria-labelledby="ohjeModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header align-items-center">
+                            <h5 class="modal-title text-dark" id="ohjeModalLabel">Ohjeet</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="ohjeModalTeksti">Visan aiheena on englannin kielen alkeet. Visassa kysytään englanninkielisiä sanoja suomeksi tai suomenkielisiä sanoja 
+                            englanniksi. <br><br>
+                            Visassa ei ole aikarajaa tai rajoitusta yrityskertojen määrään.<br><br>
+                            Onnea matkaan!
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulje</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KIRJOITA PELISI OHJE TÄHÄN MODALIIN -->
+
+            <footer class="row">
+                <div class="col-12">
+                    <p>&copy; Jarkko Kuha</p>
+                </div>
+                <script src="js/enkkuvisa.js"></script>
+                <script src="js/header.js"></script>
+                <script src="js/getPelihahmo.js"></script>
+            </footer>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+.container-fluid{
+    border: 2px solid lightblue;
+    background-color:#FB8604;
+}
+#peliContainer{
+    width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#FB8604;
+}
+#JetroHelp{
+    border:1px solid black;
+    height:40px;
+    width:40px;
+    margin-top:15px;
+    padding-top:5px;
+    margin-left:15px;
+    color:black;
+    
+}
+#jetroKysymys{
+    border:1px solid black;
+    height:40px;
+    width:40px;
+    margin-top:15px;
+    padding-top:5px;
+    margin-left:5px;
+    margin-right:5px;
+}
+#jetroVastaus{
+    border:1px solid black;
+    height:40px;
+    width:40px;
+    margin-top:15px;
+    padding-top:5px;
+    margin-left:10px;
+}
+#vastausNappi{
+    margin-left:5px;
+    height:40px;
+    width:60px;
+    margin-top:15px;
+    padding-left:2px;
+    
+}
+#jetroNappi{
+    margin-left:5px;
+    height:40px;
+    width:60px;
+    margin-top:15px;
+    padding-left:5px;
+}
+#silmaluku{
+    border:1px solid black;
+    height:40px;
+    width:40px;
+    margin-top:15px;
+    padding-top:5px;
+    margin-left:15px;
+    color:black;
+}
+[id^='lauta']{
+    border:1px outset black;
+    height:40px;
+    margin:7px;
+    max-width:100px;
+    background-color:#427ff0;
+    
+}
+#lauta5{
+    border:1px outset black;
+    height:90px;
+    margin-top:5px;
+    margin-left:5px;
+    max-width:40px;
+    background-color:#427ff0;
+}
+#lauta10{
+    border:1px outset black;
+    height:90px;
+    margin-top:5px;
+    margin-left:5px;
+    max-width:40px;
+    background-color:#427ff0;
+}
+input{
+    width:85px;
+    height:40px;
+    margin-top:15px;
+    margin-left:10px;
+    background-color:#FFB861;
+}
+.header{
+    border-bottom:outset;
+}#alku{
+    color:black;
+}#pelihahmonKuva{
+    border:none;
+    box-shadow:none;
+    width:40px;
+    height:40px;
+    padding-bottom:0px;
+}#exampleModalLabel{
+    color:black;
+}

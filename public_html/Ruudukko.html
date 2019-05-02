@@ -1,0 +1,268 @@
+<html>
+    <head>
+        <title>Ruudukkopeli</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/tyylit.css" type="text/css"/>
+        <link rel="stylesheet" href="css/JarkonTyylit.css" type="text/css"/>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <header class="row">
+                <div class="col-10 align-self-center">
+                    <a href="index.html" id="alku">
+                        <img class="img-fluid" src='img/aheader.png' alt='a team logo' max-width="100%" height="auto">
+                    </a>
+                </div>
+                <div class="col-2 align-self-center">
+                    <img class="menubutton" src="img/menu.png" width="40px" height="40px" onClick="getMenu()">
+                </div>
+            </header>
+            
+            <!-- 
+        TÄMÄ TULEE OLLA KAIKILLA SIVUILLA PAITSI ETUSIVULLA: -->
+        <div id="menu" style="visibility: hidden;"></div>
+        
+        <div id="ohje" class="row">
+                <div class="col-12 text-center pt-3">
+                    <p id="info"><button type="button" class="btn btn-danger"  onClick="getOhje()">Tarvitsetko apua?</button></p>
+                </div>
+        </div>
+        <!----- OMA PELI ALLE  ---->
+
+
+            <div class="row kokosivu">
+                <div class="modal fade" id="onnittelu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <img class="modalPelihahmo" id="pelihahmonKuva" src="" width="100px" height="100px" />
+                                <h5 class="modal-title" id="modalinOnni">Onneksi olkoon! Läpäisit pelin!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary sulje" data-dismiss="modal">Sulje</button>
+                                <button type="button" class="btn btn-primary alusta ">Alusta</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col ruudukko">
+                    <div class="row riviWidthFix">
+
+                        <div class="col-1 widthFix maaliRuutu nappi " id="1"></div>
+
+
+                        <div class="col-1 widthFix nappi " id="2" ></div>
+
+                        <div class="col-1 widthFix nappi " id="3" ></div>
+
+                        <div class="col-1 widthFix nappi " id="4" ></div>
+
+                        <div class="col-1 widthFix nappi " id="5" ></div>
+
+                        <div class="col-1 widthFix nappi " id="6" ></div>
+
+                        <div class="col-1 widthFix maaliRuutu nappi " id="7" ></div>
+
+                    </div> 
+
+
+                    <div class="row riviWidthFix">
+
+                        <div class="col-1 widthFix nappi " id="8" ></div>
+
+                        <div class="col-1 widthFix nappi " id="9" ></div>
+
+                        <div class="col-1 widthFix nappi " id="10" ></div>
+
+                        <div class="col-1 widthFix nappi " id="11" ></div>
+
+                        <div class="col-1 widthFix nappi " id="12" ></div>
+
+                        <div class="col-1 widthFix nappi " id="13" ></div>
+
+                        <div class="col-1 widthFix nappi " id="14" ></div>
+
+                    </div>
+
+
+                    <div class="row riviWidthFix">
+
+                        <div class="col-1 widthFix nappi " id="15" ></div>
+
+                        <div class="col-1 widthFix nappi " id="16" ></div>
+
+                        <div class="col-1 widthFix nappi " id="17" ></div>
+
+                        <div class="col-1 widthFix nappi " id="18" ></div>
+
+                        <div class="col-1 widthFix nappi " id="19" ></div>
+
+                        <div class="col-1 widthFix nappi " id="20" ></div>
+
+                        <div class="col-1 widthFix nappi " id="21" ></div>
+
+                    </div> 
+
+
+                    <div class="row riviWidthFix">
+
+                        <div class="col-1 widthFix nappi " id="22" ></div>
+
+                        <div class="col-1 widthFix nappi " id="23" ></div>
+
+                        <div class="col-1 widthFix nappi " id="24" ></div>
+
+                        <div class="col-1 widthFix  aloitusRuutu" id="25"></div>
+
+                        <div class="col-1 widthFix nappi " id="26" ></div>
+
+                        <div class="col-1 widthFix nappi " id="27" ></div>
+
+                        <div class="col-1 widthFix nappi " id="28" ></div>
+
+                    </div> 
+
+
+                    <div class="row riviWidthFix">
+
+                        <div class="col-1  widthFix nappi " id="29" ></div>
+
+                        <div class="col-1 widthFix nappi " id="30" ></div>
+
+                        <div class="col-1 widthFix nappi " id="31" ></div>
+
+                        <div class="col-1 widthFix nappi " id="32" ></div>
+
+                        <div class="col-1 widthFix nappi " id="33" ></div>
+
+                        <div class="col-1 widthFix nappi " id="34" ></div>
+
+                        <div class="col-1 widthFix nappi " id="35" ></div>
+
+                    </div> 
+
+
+                    <div class="row riviWidthFix">
+
+                        <div class="col-1 widthFix nappi " id="36" ></div>
+
+                        <div class="col-1 widthFix nappi " id="37" ></div>
+
+                        <div class="col-1 widthFix nappi " id="38" ></div>
+
+                        <div class="col-1 widthFix nappi " id="39" ></div>
+
+                        <div class="col-1 widthFix nappi " id="40" ></div>
+
+                        <div class="col-1 widthFix nappi " id="41" ></div>
+
+                        <div class="col-1 widthFix nappi " id="42" ></div>
+
+                    </div> 
+
+
+                    <div class="row riviWidthFix">
+
+                        <div class="col-1 widthFix maaliRuutu nappi " id="43" ></div>
+
+                        <div class="col-1 widthFix nappi " id="44" ></div>
+
+                        <div class="col-1 widthFix nappi " id="45" ></div>
+
+                        <div class="col-1 widthFix nappi " id="46" ></div>
+
+                        <div class="col-1 widthFix nappi " id="47" ></div>
+
+                        <div class="col-1 widthFix nappi " id="48" ></div>
+
+                        <div class="col-1 widthFix  maaliRuutu nappi " id="49" ></div>
+
+                    </div> 
+                    <div class="row">
+                        <p class="col-12 highScore">&nbsp;</p>
+                    </div>
+                </div> 
+
+
+
+
+                <!--
+                
+                PELIHAHMON KÄYTTÖ:
+                1. Lisää kuva, jonka id on pelihahmonKuva: <img id="pelihahmonKuva" src="" width="600px" height="auto" />
+                2. Lisää scripti: <script src="js/getPelihahmo.js"></script>
+                
+                -->
+                <div class="modal fade" id="ohjeModal" tabindex="-1" role="dialog" aria-labelledby="ohjeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header align-items-center">
+                                <h5 class="modal-title text-dark" id="ohjeModalLabel">Ohjeet</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p id="ohjeModalTeksti"> Ruudukkopelin ohjeet. <br><br>
+
+                                    Tämä peli on yhteen- ja vähennyslaskuja yhdistelevä, jossa sinun on tarkoitus päästä ruudukosta
+                                    pois. Aloita peli painamalla mitä tahansa nappia keskellä olevan aloitusnapin 			
+                                    vierestä. Sinulle ilmestyy erillinen kysymysikkuna, jossa on monenlaisia kysymyksiä.<br><br> 					
+
+                                    Kysymykset ovat esimerkiksi tällaisia:  Paljonko on yhteenlaskun summa, vähennyslaskun erotus tai mikä luku kuuluu 
+                                    kysymysmerkin paikalle?<br><br>
+
+                                    Kun olet vastannut kysymykseen, se ilmaisee vastauksen pelilaudalle joko O-kirjaimella tai V-kirjaimella.
+                                    O on oikein, ja silloin myös napin väri muuttuu vihreäksi. V on väärin ja silloin väri muuttuu punaiseksi. 
+                                    Kun olet kerran vastannut kysymykseen, et voi painaa enää samaa nappia uudelleen. Sinun pitää saada 
+                                    reitti aloitusruudusta johonkin neljästä maaliruudusta, jotka ovat väriltään violetteja. Aina kun 
+                                    vastaat oikein, saat pisteen ja voit jatkaa samaa polkua eteenpäin. Jos vastaat väärin, tulee sinun kiertää väärin
+                                    vastaamasi kohta eri kautta.<br><br> 
+
+                                    Maaliruutu voi kuitenkin sulkeutua kerran. Jos vastaat väärin, joudut pelaamaan toiselle
+                                    maaliruudulle.<br><br>
+
+                                    Jos et voi enää edetä niin paina keskellä olevaa nappia, joka aloittaa pelin alusta. <br><br>
+
+                                    Onnea peliin! 
+
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulje</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <footer class="row">
+                <div class="col-12">
+                    <p>&copy; Jarkko Kuha</p> <!-- KIRJOITA OMA NIMESI TÄHÄN -->
+                </div>
+            </footer>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/0.7.1/easeljs.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/getPelihahmo.js"></script>
+        <script src="js/Ruudukko.js"></script>
+        <script src="js/header.js"></script>
+
+    </body>
+
+
+</html>
