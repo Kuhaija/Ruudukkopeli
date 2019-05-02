@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <title>A-team: Oppimisympäristö</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/tyylit.css" type="text/css"/>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <header class="row">
+            <div class="col-10 align-self-center">
+                <a href="index.html" id="alku">
+                    <img class="img-fluid" src='img/aheader.png' alt='a team logo' max-width="100%" height="auto">
+                </a>
+            </div>
+            <div class="col-2 align-self-center">
+                <img class="menubutton" src="img/menu.png" width="40px" height="40px" onClick="getMenu()">
+            </div>
+        </header>
+        
+        <!-- 
+        TÄMÄ TULEE OLLA KAIKILLA SIVUILLA PAITSI ETUSIVULLA HETI HEADERIN JÄLKEEN:
+        <div id="menu" style="visibility: hidden;"></div>
+        -->
+        
+
+        
+        <!-- KIRJOITA PELISI SISÄLTÖ TÄHÄN VÄLIIN -->
+        <div class="row">
+            <div class="canvas col-12 col-lg-6">
+                <div id="ohje" class="row">
+                    <div class="col-12 text-center px-3">
+                        <p id="info"><button type="button" class="btn btn-danger"  onClick="getOhje()">Tarvitsetko apua?</button></p>
+                    </div>
+                </div>
+                <h2>1. Piirrä pelihahmosi tähän</h2>
+                <p>Piirto-ohjeet pelihahmon tekemiseen.</p>
+                <canvas id="pelihahmo" width="600px" height="600px"></canvas>
+                <div class="row">
+                    <div class="col-12">
+                        <img id="brushDot" src="img/dot.png">
+                    </div>
+                    <div class="col-2">
+                        <img id="black" class="tools currentTool" src="img/brush.png" onclick="cBlack()">
+                    </div>
+                    <div class="col-2">
+                        <img id="red" class="tools" src="img/brush_r.png" onclick="cRed()">
+                    </div>
+                    <div class="col-2">
+                        <img id="green" class="tools" src="img/brush_g.png" onclick="cGreen()">
+                    </div>
+                    <div class="col-2">
+                        <img id="blue" class="tools" src="img/brush_b.png" onclick="cBlue()">
+                    </div>
+                    <div class="col-2">
+                        <img class="tools" src="img/iso.png" onclick="strokeBig()">
+                    </div>
+                    <div class="col-2">
+                        <img class="tools" src="img/pieni.png" onclick="strokeSmall()">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-6"><button class="btn btn-success text-right" style="float: right;" onclick="tallennaHahmo()" data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Pelihahmosi on nyt tallennettu. Valitse seuraavaksi mitä peliä haluat pelata.">Tallenna</button></div>
+                    <div class="col-6"><button class="btn btn-info text-left" onclick="tyhjennaHahmo()"  data-toggle="popover" data-trigger="focus" data-placement="top" data-content="Pelihahmosi on nyt poistettu. Voit piirtää uuden pelihahmon.">Poista</button></div>
+                </div>
+            </div>
+            
+            <div class="applications shadow col-12 col-lg-6" id="valitsepeli">
+                <h2>2. Valitse peli tästä</h2>
+                <p>Lyhyt teksti sovelluksista</p>
+                <div class="row align-items-center">                  
+                     <div class="col-6 col-md-4">
+                        <a href="Ruudukko.html"><p class="apptitle">Ruudukkopeli</p></a>
+                        <a href="Ruudukko.html"><img class="appicon" src="img/ruudukonKuva.png"></a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <a href="enkkuvisa.html"><p class="apptitle">Enkkuvisa</p></a>
+                        <a href="enkkuvisa.html"><img class="appicon" src="img/Enkkuvisa.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- KIRJOITA PELISI SISÄLTÖ TÄHÄN VÄLIIN -->
+        
+        <!-- PÄÄVALIKKO PELI- JA VISASIVUILLE -->
+        <div id="menu"></div>
+        <!-- PÄÄVALIKKO PELI- JA VISASIVUILLE -->
+        
+        <!-- KIRJOITA PELISI OHJE TÄHÄN MODALIIN -->
+        <!-- MUISTA LISÄTÄ HEADERIIN OHJEDIV JA ALAS SCRIPTI <script src="js/header.js"></script> -->
+        <div class="modal fade" id="ohjeModal" tabindex="-1" role="dialog" aria-labelledby="ohjeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header align-items-center">
+                    <h5 class="modal-title text-dark" id="ohjeModalLabel">Ohjeet</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                      <p id="ohjeModalTeksti">Ensimmäiseksi piirrä oma pelihahmosi etusivun piirtoalustalla. Voit valita pensselin värin ja koon. Kun saat pelihahmosi valmiiksi, muista tallentaa hahmo tallennuspainikkeesta.<br><br>
+                      Halutessasi voit tyhjentää piirtoalustan "Poista"-painikkeella. Huomaa, että "Poista"-painike paitsi tyhjentää piirtoalustan, niin se myös poistaa kaikki aiemmin tekemäsi pelihahmot muistista.<br><br>
+                      Piirrettyäsi pelihahmon voit valita viidestä matematiikka-aiheisesta pelistä tai viidestä tietovisasta. Pelihahmosi näkyy peleissä pelihahmonasi ja tutorinasi.
+                      </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sulje</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- KIRJOITA PELISI OHJE TÄHÄN MODALIIN -->
+
+        <!--
+        PELIHAHMON KÄYTTÖ:
+        1. Lisää kuva, jonka id on pelihahmonKuva: <img id="pelihahmonKuva" src="" width="600px" height="auto" />
+        2. Lisää scripti: <script src="js/getPelihahmo.js"></script>
+        -->
+        
+        <footer class="row">
+            <div class="col-12">
+                <p>&copy; Eero Vertanen, Jetro Tölli, Jani Alasirniö, Jarkko Kuha, Oskari Järvelin</p> <!-- Kirjoita nimesi tähän -->
+                <p><small>Sivustolla käytettyjen muokattujen ikonien alkuperäiset versiot on tehnyt <br> <a href="https://www.freepik.com/" title="Freepik">Freepik</a> ja julkaissut ne sivustolla <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> lisenssillä <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a></small></p>
+            </div>
+        </footer>
+    
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/EaselJS/0.7.1/easeljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/header.js"></script>
+    <script src="js/canvas.js"></script> <!-- TÄTÄ TARVITSEE VAIN ETUSIVULLA -->
+    <script src="js/getPelihahmo.js"></script>
+    
+  
+    </body>
+</html>
